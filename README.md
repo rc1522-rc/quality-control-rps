@@ -71,3 +71,67 @@ The workflow installs the packages from requirements.txt and runs pytest when a 
 - requirements.txt: Required Python packages
 - .gitignore: Files excluded from GitHub
 - .github/workflows/python-app.yml: GitHub Actions workflow
+
+
+
+
+
+## Stocks Dashboard - Extra Credit
+
+I also implemented a stocks dashboard using the Alpha Vantage API.
+
+The application retrieves historical daily stock prices using pandas and displays a line chart using Plotly.
+
+### API Key Setup
+
+Get an API key from:
+
+https://www.alphavantage.co/support/#api-key
+
+Create a `.env` file in the main project directory.
+
+Add:
+
+```text
+ALPHAVANTAGE_API_KEY="YOUR_API_KEY"
+```
+
+Replace YOUR_API_KEY with your actual API key.
+
+The `.env` file is excluded from version control using `.gitignore`.
+
+GitHub Actions uses a repository secret named `ALPHAVANTAGE_API_KEY` to run the automated stocks test.
+
+### Running the Dashboard
+
+Activate the environment:
+
+```bash
+conda activate quality-control-env
+```
+
+Install the packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the dashboard:
+
+```bash
+python -m app.stocks
+```
+
+Enter a stock ticker such as IBM when prompted.
+
+### Testing
+
+Run all tests using:
+
+```bash
+python -m pytest
+```
+
+The stocks test checks that the data-fetching function returns a pandas DataFrame containing timestamp and closing-price columns.
+
+This test requires a valid API key and available access to the Alpha Vantage API.
