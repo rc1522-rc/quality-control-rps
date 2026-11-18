@@ -1,0 +1,26 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Rock Paper Scissors</h1>
+
+<p>Select your choice and play against the computer.</p>
+
+<form action="/rps/results" method="POST">
+
+    <div class="mb-3">
+        <label for="choice" class="form-label">Your Choice:</label>
+
+        <select name="choice" id="choice" class="form-select">
+            <option value="rock">Rock</option>
+            <option value="paper">Paper</option>
+            <option value="scissors">Scissors</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Play Game</button>
+
+</form>
+
+{% endblock %}
