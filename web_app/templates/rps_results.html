@@ -1,0 +1,24 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Rock Paper Scissors Results</h1>
+
+<div class="card mt-3">
+    <div class="card-body">
+
+        <p>You chose: <strong>{{ user_choice }}</strong></p>
+
+        <p>Computer chose: <strong>{{ computer_choice }}</strong></p>
+
+        <h3>{{ result }}</h3>
+
+        <a href="/rps/form" class="btn btn-primary mt-3">
+            Play Again
+        </a>
+
+    </div>
+</div>
+
+{% endblock %}

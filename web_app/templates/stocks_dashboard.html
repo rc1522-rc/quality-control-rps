@@ -1,0 +1,44 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Stocks Dashboard: {{ symbol }}</h1>
+
+<p>Historical daily closing prices for {{ symbol }}.</p>
+
+<h3>Recent Stock Data</h3>
+
+<table class="table table-striped table-bordered">
+
+    <thead class="table-dark">
+        <tr>
+            <th>Date</th>
+            <th>Closing Price</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for row in data %}
+        <tr>
+            <td>{{ row.timestamp }}</td>
+            <td>{{ row.close }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+<h3>Stock Price Chart</h3>
+
+<div class="card">
+    <div class="card-body">
+        {{ chart | safe }}
+    </div>
+</div>
+
+<a href="/stocks/form" class="btn btn-primary mt-3">
+    Search Another Stock
+</a>
+
+{% endblock %}

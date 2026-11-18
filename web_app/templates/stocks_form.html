@@ -1,0 +1,30 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Stocks Dashboard</h1>
+
+<p>Enter a stock ticker symbol to view historical stock prices.</p>
+
+<form action="/stocks/dashboard" method="POST">
+
+    <div class="mb-3">
+        <label for="symbol" class="form-label">Stock Symbol:</label>
+
+        <input
+            type="text"
+            name="symbol"
+            id="symbol"
+            class="form-control"
+            placeholder="Example: IBM"
+        >
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        View Dashboard
+    </button>
+
+</form>
+
+{% endblock %}
