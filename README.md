@@ -135,3 +135,37 @@ python -m pytest
 The stocks test checks that the data-fetching function returns a pandas DataFrame containing timestamp and closing-price columns.
 
 This test requires a valid API key and available access to the Alpha Vantage API.
+
+## Web Application
+
+This project includes a Flask web application built for OPAN 3244.
+
+### Features
+
+- Home, About, and Hello pages
+- Rock Paper Scissors game
+- Stocks Dashboard with a table and chart
+- Bootstrap styling
+- Flash messages for invalid stock symbols
+
+### Running the Web Application
+
+Install the required packages:
+
+    pip install -r requirements.txt
+
+Create a .env file with your ALPHAVANTAGE_API_KEY.
+
+Start the application:
+
+    flask --app "web_app:create_app" run
+
+### Running Tests
+
+    python -m pytest
+
+### Deployment
+
+The web application is deployed using Render.
+
+Live Website: https://quality-control-rps.onrender.com/
